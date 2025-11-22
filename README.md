@@ -87,7 +87,7 @@ Pour trouver les variants disponibles.
 spack info <package>
 ```
 
-Par exemple avec `extrae`.
+Par exemple avec `extrae` nous avons 5 variants disponibles.
 ```
 Variants:
     build_system [autotools]        autotools
@@ -104,7 +104,7 @@ Variants:
         Enable single MPI instrumentation library that supports both Fortran and C
 ```
 
-Nous avons cette ligne où `papi` est un variant compatible, ici le `false, true` signifie que c'est un paramètre booléen, dans ce cas-ci `[true]` indique que par défaut il est activé, donc faire un **+** serait redondant, mais on peut forcer sa désactivation avec **~**.
+Nous avons ci-dessous cette ligne où `papi` est un variant compatible, ici le `false, true` signifie que c'est un paramètre booléen, dans ce cas-ci `[true]` indique que par défaut il est activé, donc faire un **+** serait redondant, mais on peut forcer sa désactivation avec **~**.
 ```
  papi [true]                     false, true
         Use PAPI to collect performance counters
