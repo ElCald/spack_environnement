@@ -8,8 +8,8 @@ Créer un répertoire où se trouvera l'installation de l'environnement, par exe
 
 Le répertoire `env_profiler` sera celui qui contiendra les packages de profiling et où on se trouvera pour l'exemple.
 ```
-mkdir /home/.spack-env/env_profiler
-cd /home/.spack-env/env_profiler
+mkdir /$HOME/.spack-env/env_profiler
+cd /$HOME/.spack-env/env_profiler
 spack env create . 
 ```
 
