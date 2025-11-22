@@ -1,7 +1,7 @@
 # spack_environnement
 Installation de packages de profiling avec spack dans un environnement.
 
-### Création d'un environnement
+## Création d'un environnement
 Un environnement c'est un répertoire qui contiendra tous les packages, une fois installé il suffira d'activer celui-ci et les packages seront accessibles dans toute la session utilisateur. Généralement on crée ses répertoires dans un répertoire `env` que l'on met dans le `/.spack` ou on crée un autre répertoire, par exemple `/.spack-env`.<br>
 
 Créer un répertoire où se trouvera l'installation de l'environnement, par exemple dans `/home/.spack-env/` ou `/home/.spack/env/`, si le répertoire où se trouveront les environnements n'existe pas, le créer. <br>
@@ -13,7 +13,7 @@ cd /home/.spack-env/env_profiler
 spack env create . 
 ```
 
-### Chargement des packages
+## Chargement des packages
 Il faut en amont activer l'environnement pour faire toute actions, on se trouve dans le répertoire `env_profiler`.
 ```
 spack env activate .
@@ -24,7 +24,7 @@ Pour désactiver l'environnement.
 spack env deactivate
 ```
 
-#### Méthode manuelle
+### Méthode manuelle
 Ajout de chaque package, ce qui remplira le `specs`.
 ```
 spack add gcc
@@ -47,7 +47,7 @@ spack remove --all
 
 Cette commande modifie le fichier `spack.yaml`.
 
-#### Méthode avec ficher de config
+### Méthode avec ficher de config
 Dans le répertoire `env_profiler`, si le fichier `spack.yaml` n'existe pas, le créer et ajouter ceci.
 
 ```
@@ -77,7 +77,7 @@ spack:
 - **packages** : permet de forcer une version de package (ex: le cas où on installe 2 versions du même package) ou d'imposer un compilateur pour tous les packages, **ça peut créer des conflits**.
 - **concretize** : `true/false/when_possible`, impose ou non l'usage d'une unique version de package. Par exemple si `gcc` a besoin d'une version de `zstd` et `tau` a besoin d'une autre, alors il y aura conflit, donc on peut soit mettre `false`, pour tout permettre ou `when_possible` pour maximiser l'usage d'une version d'un package.
 
-### Les variants
+#### Les variants
 Les variants permettent à un package d'être compilé de manière à être compatible avec un autre package. Certains packages de compilations sont activé automatiquement, d'autres doivent l'être dans le fichier de configuration.
 - **+** : ajouter le variant
 - **~** : forcer la désactivation du variant
@@ -110,8 +110,32 @@ Nous avons cette ligne où `papi` est un variant compatible, ici le `false, true
         Use PAPI to collect performance counters
 ```
 
-### Les compilateurs
+#### Les compilateurs
 Pour connaitres les différents compilateurs disponibles.
 ```
 spack compiler list
 ```
+
+## Installation
+Il est utile de reconfigurer les dépendances avant une installation, bien que la commande d'installation puisse le faire par défaut.
+```
+spack concretize -f
+```
+Le `-f` est là pour forcer dans le cas où le fichier `spack.lock` existe car crée au premier `concretize`.
+
+```
+spack install
+```
+Ceci va faire l'installation de tous les packages, **selon le nombre et les packages à installer, ces 2 commandes peuvent prendre beaucoup de temps avant de faire un affichage en console**.
+
+### Désinstallation
+Pour supprimer un package, il faut avoir activé l'environnement, dans le cas contraire ça supprimera de manière globale.
+```
+spack uninstall <package>
+```
+
+Pour tout supprimer.
+```
+spack uninstall --all
+```
+
