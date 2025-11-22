@@ -1,0 +1,19 @@
+spack:
+  specs:
+  - gcc
+  - papi
+  - tau +papi +binutils +pdt ~mpi ~openmp
+  - extrae +papi
+  - valgrind 
+  - likwid
+  
+  view: false
+
+  packages:
+    all:
+      require: "%gcc"
+    zstd:
+      require: "@1.5.7"
+
+  concretizer:
+    unify: when_possible
