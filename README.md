@@ -139,3 +139,5 @@ Pour tout supprimer.
 spack uninstall --all
 ```
 
+## Utilisation de l'environnement
+[En cours...]
