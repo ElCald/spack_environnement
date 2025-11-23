@@ -5,7 +5,7 @@ Un environnement c'est un répertoire qui contiendra tous les packages, une fois
 
 ## Création d'un environnement
 
-Créer un répertoire `env_profiler` où se trouvera l'installation de l'environnement avec les packages, par exemple dans `/$HOME/.spack/env/` ou `/$HOME/.spack-env/`, si le répertoire où se trouveront les environnements n'existe pas, le créer. <br>
+Créer un répertoire `env_profiler` (nom arbitraire) où se trouvera l'installation de l'environnement avec les packages, par exemple dans `/$HOME/.spack/env/` ou `/$HOME/.spack-env/`, si le répertoire où se trouveront les environnements n'existe pas, le créer. <br>
 
 Dans ce cas, le répertoire `env_profiler` sera celui qui contiendra les packages de profiling et où on se trouvera pour l'exemple.
 ```
