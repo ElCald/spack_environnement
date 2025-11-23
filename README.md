@@ -35,7 +35,7 @@ spack add valgrind
 spack add likwid
 ```
 
-Pour retirer un package de l'environnement. Ce sera nécessaire pour l'ajouter de nouveau avec des options. Il faudra par la suite refaire l'installation.
+Pour retirer un package de l'environnement. Ce sera nécessaire pour l'ajouter de nouveau avec des options. Cette commande modifie le fichier `spack.yaml`, il faudra par la suite refaire l'installation.
 ```
 spack remove <package>
 ```
@@ -44,8 +44,6 @@ Pour tout retirer
 ```
 spack remove --all
 ```
-
-Cette commande modifie le fichier `spack.yaml`.
 
 ### Méthode avec ficher de config
 Dans le répertoire `env_profiler`, si le fichier `spack.yaml` n'existe pas, le créer et ajouter ceci.
@@ -121,12 +119,14 @@ Il est utile de reconfigurer les dépendances avant une installation, bien que l
 ```
 spack concretize -f
 ```
-Le `-f` est là pour forcer dans le cas où le fichier `spack.lock` existe car crée au premier `concretize`.
+Le `-f` est là pour forcer dans le cas où le fichier `spack.lock` existe car crée au premier `concretize`. <br>
 
+Pour faire l'installation de tous les packages.
 ```
 spack install
 ```
-Ceci va faire l'installation de tous les packages, **selon le nombre et les packages à installer, ces 2 commandes peuvent prendre beaucoup de temps avant de faire un affichage en console**.
+
+**Selon le nombre et les packages à installer, ces 2 commandes peuvent prendre beaucoup de temps avant de faire un affichage en console.**
 
 ### Désinstallation
 Pour supprimer un package, il faut avoir activé l'environnement, dans le cas contraire ça supprimera de manière globale.
