@@ -1,12 +1,13 @@
 # spack_environnement
-Installation de packages de profiling avec spack dans un environnement.
+Installation de packages de profiling avec spack dans un environnement. <br>
+
+Un environnement c'est un répertoire qui contiendra tous les packages, une fois installé il suffira d'activer celui-ci et les packages seront accessibles dans toute la session utilisateur. Généralement on crée ses répertoires dans un répertoire `env` que l'on met dans le `/.spack` ou on crée un autre répertoire pour les environnements, par exemple `/.spack-env`.
 
 ## Création d'un environnement
-Un environnement c'est un répertoire qui contiendra tous les packages, une fois installé il suffira d'activer celui-ci et les packages seront accessibles dans toute la session utilisateur. Généralement on crée ses répertoires dans un répertoire `env` que l'on met dans le `/.spack` ou on crée un autre répertoire, par exemple `/.spack-env`.<br>
 
-Créer un répertoire où se trouvera l'installation de l'environnement, par exemple dans `/home/.spack-env/` ou `/home/.spack/env/`, si le répertoire où se trouveront les environnements n'existe pas, le créer. <br>
+Créer un répertoire `env_profiler` où se trouvera l'installation de l'environnement avec les packages, par exemple dans `/$HOME/.spack/env/` ou `/$HOME/.spack-env/`, si le répertoire où se trouveront les environnements n'existe pas, le créer. <br>
 
-Le répertoire `env_profiler` sera celui qui contiendra les packages de profiling et où on se trouvera pour l'exemple.
+Dans ce cas, le répertoire `env_profiler` sera celui qui contiendra les packages de profiling et où on se trouvera pour l'exemple.
 ```
 mkdir /$HOME/.spack-env/env_profiler
 cd /$HOME/.spack-env/env_profiler
