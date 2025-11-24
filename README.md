@@ -80,8 +80,8 @@ spack:
   
 #### Les variants
 Les variants permettent à un package d'être compilé de manière à être compatible avec un autre package. Certains packages de compilations sont activé automatiquement, d'autres doivent l'être dans le fichier de configuration.
-- **+** : ajouter le variant
-- **~** : forcer la désactivation du variant
+- **+** : activer le variant
+- **~** : désactiver le variant
 
 Pour trouver les variants disponibles.
 ```
