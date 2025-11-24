@@ -116,11 +116,29 @@ spack compiler list
 ```
 
 ## Installation
-Il est utile de reconfigurer les dépendances avant une installation, bien que la commande d'installation puisse le faire par défaut.
+Il est utile de vérifier la résolution des dépendances avant une installation, bien que la commande d'installation puisse le faire par défaut. <br>
+Le `-f` est là pour forcer dans le cas où le fichier `spack.lock` existe car crée au premier `concretize`.
 ```
 spack concretize -f
 ```
-Le `-f` est là pour forcer dans le cas où le fichier `spack.lock` existe car crée au premier `concretize`. <br>
+
+Voir tout ce qui va être installé après `concretize`.
+```
+spack find
+```
+
+Voir le plan d'installation (on peut ne rien mettre et ça va faire le spec du fichier `spack.yaml`).
+- Montre exactement ce qui sera installé
+- Toutes les dépendances et leurs versions
+- Les variantes activées
+```
+spack spec <package> <variants>
+```
+
+Simulation d'une installation.
+```
+spack install --fake
+```
 
 Pour faire l'installation de tous les packages.
 ```
