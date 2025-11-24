@@ -62,21 +62,19 @@ spack:
   packages:
     all:
       require: "%gcc"
-    zstd:
-      require: "@1.5.7"
 
   concretizer:
-    unify: true
+    unify: when_possible
 
   view: false
 ```
 
 - **specs** : packages à installer avec les [variants](#Les-variants).
 - **packages** : permet d'ajouter des préférences aux packages, de l'imposer pour tous les packages (`all`) ou un seul spécifique (`<package>`), **ça peut créer des conflits**.
-  - require : force une version ou impose un [compilateur](#Les-compilateurs)
-  - variants : `+` impose un variant
-  - providers : force un fournisseur (ex : `mpi: [openmpi]`)
-  - version : indique des versions de préférences **sans forcer** (ex : [1.23.1, 1.24.2])
+  - require : force une version (ex: `@1.5.7`) ou impose un [compilateur](#Les-compilateurs).
+  - variants : `+` impose un variant.
+  - providers : force un fournisseur (ex : `mpi: [openmpi]`).
+  - version : indique des versions de préférences **sans forcer** (ex : [1.23.1, 1.24.2]).
 - **concretize** : `true/false/when_possible`, impose ou non l'usage d'une unique version de package. Par exemple si `gcc` a besoin d'une version de `zstd` et `tau` a besoin d'une autre, alors il y aura conflit, donc on peut soit mettre `false`, pour tout permettre ou `when_possible` pour maximiser l'usage d'une version d'un package.
 - **view** : `true/false` crée un fichier qui unifie les liens symbolique (commodité), si `false` il faudra impérativement faire les `spack load <package>`. Il peut être source de conflit entre versions de package si `true`.
   
