@@ -10,7 +10,9 @@ Créer un répertoire `env_profiler` (nom arbitraire) où se trouvera l'installa
 Dans ce cas, le répertoire `env_profiler` sera celui qui contiendra les packages de profiling et où on se trouvera pour l'exemple.
 ```
 mkdir /$HOME/.spack-env/env_profiler
+
 cd /$HOME/.spack-env/env_profiler
+
 spack env create . # répertoire courant
 ```
 
