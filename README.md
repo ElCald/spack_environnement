@@ -30,7 +30,8 @@ spack env deactivate
 Pour effectuer des commandes sans activer l'environnement, il faut utiliser `-e` et préciser le chemin vers le répertoire ou se placer dedans et mettre `.` pour indiquer le répertoire courant.
 ```
 spack -e . <commande>
-OU
+```
+```
 spack -e $HOME/.spack-env/env_profiler <commande>
 ```
 ### Méthode manuelle
