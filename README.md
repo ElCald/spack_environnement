@@ -11,7 +11,7 @@ Dans ce cas, le répertoire `env_profiler` sera celui qui contiendra les package
 ```
 mkdir /$HOME/.spack-env/env_profiler
 cd /$HOME/.spack-env/env_profiler
-spack env create . 
+spack env create . # répertoire courant
 ```
 
 ## Chargement des packages
