@@ -143,7 +143,7 @@ On peut voir les packages demandés :
 - ~ = variante désactivée (exemple : ~mpi = sans MPI)
 - \+ = variante activée (exemple : +papi = avec PAPI)
 
-L'affichage se fait sous forme de sections indiquant l'architecture et le(s) compilateur(s) utilisé(s), parfois aucun n'est nécessaire `no arch / no comilers`.
+L'affichage se fait ensuite sous forme de sections indiquant l'architecture et le(s) compilateur(s) utilisé(s), parfois aucun n'est nécessaire `no arch / no comilers`.
 ```
 # -- architecture / compilateur(s) ----------------
 -- linux-rhel9-zen4 / %c,cxx,fortran=gcc@14.2.0 -----------------
