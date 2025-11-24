@@ -54,7 +54,7 @@ spack:
   specs:
   - gcc
   - papi
-  - tau +papi +binutils +pdt ~mpi ~openmp
+  - tau +papi +binutils +pdt +mpi +openmp
   - extrae +papi
   - valgrind 
   - likwid
