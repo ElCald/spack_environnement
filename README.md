@@ -173,7 +173,7 @@ spack install
 **Selon le nombre et les packages à installer, ces commandes peuvent prendre beaucoup de temps avant de faire un affichage en console.**
 
 ### Désinstallation
-Pour supprimer un package, il faut avoir activé l'environnement, dans le cas contraire ça supprimera de manière globale.
+Pour supprimer un package, il faut avoir activé l'environnement, dans le cas contraire ça supprimera de manière globale à l'utilisateur.
 ```
 spack uninstall <package>
 ```
