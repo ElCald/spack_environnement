@@ -123,12 +123,12 @@ spack concretize -f
 ```
 
 Voir tout ce qui va être installé après `concretize`.
-```
-spack find
-```
 - `-d` : voir les dépendances.
 - `-v` : voir les variants.
 - `-c` : voir les packages concretized à installer.
+```
+spack find
+```
 
 Voir le plan d'installation (on peut ne rien mettre et ça va faire le spec du fichier `spack.yaml`).
 - Montre exactement ce qui sera installé
@@ -148,7 +148,7 @@ Pour faire l'installation de tous les packages.
 spack install
 ```
 
-**Selon le nombre et les packages à installer, ces 2 commandes peuvent prendre beaucoup de temps avant de faire un affichage en console.**
+**Selon le nombre et les packages à installer, ces commandes peuvent prendre beaucoup de temps avant de faire un affichage en console.**
 
 ### Désinstallation
 Pour supprimer un package, il faut avoir activé l'environnement, dans le cas contraire ça supprimera de manière globale.
