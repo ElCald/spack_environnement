@@ -72,8 +72,8 @@ spack:
 ```
 
 - **specs** : packages à installer avec les [variants](#Les-variants).
-- **view** : `true/false` unifie les liens symbolique (commodité), si `false` il faudra impérativement faire les `spack load <package>`. Il peut être source de conflit entre versions de package si `true`.
-- **packages** : permet de forcer une version de package (ex: le cas où on installe 2 versions du même package) ou d'imposer un [compilateur](#Les-compilateurs) pour tous les packages, **ça peut créer des conflits**.
+- **view** : `true/false` crée un fichier qui unifie les liens symbolique (commodité), si `false` il faudra impérativement faire les `spack load <package>`. Il peut être source de conflit entre versions de package si `true`.
+- **packages** : permet de forcer une version de package (ex: le cas où on installe 2 versions du même package) ou d'imposer un [compilateur](#Les-compilateurs) pour tous les packages (`all`) ou un seul spécifique, **ça peut créer des conflits**.
 - **concretize** : `true/false/when_possible`, impose ou non l'usage d'une unique version de package. Par exemple si `gcc` a besoin d'une version de `zstd` et `tau` a besoin d'une autre, alors il y aura conflit, donc on peut soit mettre `false`, pour tout permettre ou `when_possible` pour maximiser l'usage d'une version d'un package.
 
 #### Les variants
