@@ -1,4 +1,4 @@
-# spack_environnement
+# Spack environnement
 Installation de packages de profiling avec spack dans un environnement. <br>
 
 Un environnement c'est un répertoire qui contiendra tous les packages, une fois installé il suffira d'activer celui-ci et les packages seront accessibles dans toute la session utilisateur. Généralement on crée ses répertoires dans un répertoire `env` que l'on met dans le `/.spack` ou on crée un autre répertoire pour les environnements, par exemple `/.spack-env`.
