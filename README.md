@@ -86,7 +86,7 @@ Pour trouver les variants disponibles.
 spack info <package>
 ```
 
-Par exemple avec `extrae` nous avons 5 variants disponibles.
+Par exemple avec `extrae` nous avons 6 variants disponibles.
 ```
 Variants:
     build_system [autotools]        autotools
@@ -126,6 +126,9 @@ Voir tout ce qui va être installé après `concretize`.
 ```
 spack find
 ```
+- `-d` : voir les dépendances.
+- `-v` : voir les variants.
+- `-c` : voir les packages concretized à installer.
 
 Voir le plan d'installation (on peut ne rien mettre et ça va faire le spec du fichier `spack.yaml`).
 - Montre exactement ce qui sera installé
