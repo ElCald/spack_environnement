@@ -46,7 +46,7 @@ Pour tout retirer
 spack remove --all
 ```
 
-### Méthode avec ficher de config
+### Méthode avec fichier de config
 Dans le répertoire `env_profiler`, si le fichier `spack.yaml` n'existe pas, le créer et ajouter ceci.
 
 ```
