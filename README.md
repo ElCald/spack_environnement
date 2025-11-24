@@ -16,6 +16,11 @@ cd /$HOME/.spack-env/env_profiler
 spack env create . # répertoire courant
 ```
 
+Pour connaitre les environnements chargés.
+```
+spack env status
+```
+
 ## Chargement des packages
 Il faut en amont activer l'environnement pour faire toute actions, on se trouve dans le répertoire `env_profiler`.
 ```
