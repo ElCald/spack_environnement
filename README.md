@@ -137,9 +137,11 @@ spack find
 ```
 On peut voir les packages demandés :
 - [+] = package installé
+- [-] = package désinstallé
 - [^] = package non installé ou juste référencé
 - ~ = variante désactivée (exemple : ~mpi = sans MPI)
 - \+ = variante activée (exemple : +papi = avec PAPI)
+- \- = package non installé
 
 L'affichage se fait ensuite sous forme de sections indiquant l'architecture et le(s) compilateur(s) utilisé(s), parfois aucun n'est nécessaire `no arch / no comilers`.
 ```
