@@ -58,8 +58,6 @@ spack:
   - extrae +papi
   - valgrind 
   - likwid
-  
-  view: false
 
   packages:
     all:
@@ -69,17 +67,19 @@ spack:
 
   concretizer:
     unify: true
+
+  view: false
 ```
 
 - **specs** : packages à installer avec les [variants](#Les-variants).
-- **view** : `true/false` crée un fichier qui unifie les liens symbolique (commodité), si `false` il faudra impérativement faire les `spack load <package>`. Il peut être source de conflit entre versions de package si `true`.
 - **packages** : permet d'ajouter des préférences aux packages, de l'imposer pour tous les packages (`all`) ou un seul spécifique (`<package>`), **ça peut créer des conflits**.
   - require : force une version ou impose un [compilateur](#Les-compilateurs)
   - variants : `+` impose un variant
   - providers : force un fournisseur (ex : `mpi: [openmpi]`)
   - version : indique des versions de préférences **sans forcer** (ex : [1.23.1, 1.24.2])
 - **concretize** : `true/false/when_possible`, impose ou non l'usage d'une unique version de package. Par exemple si `gcc` a besoin d'une version de `zstd` et `tau` a besoin d'une autre, alors il y aura conflit, donc on peut soit mettre `false`, pour tout permettre ou `when_possible` pour maximiser l'usage d'une version d'un package.
-
+- **view** : `true/false` crée un fichier qui unifie les liens symbolique (commodité), si `false` il faudra impérativement faire les `spack load <package>`. Il peut être source de conflit entre versions de package si `true`.
+  
 #### Les variants
 Les variants permettent à un package d'être compilé de manière à être compatible avec un autre package. Certains packages de compilations sont activé automatiquement, d'autres doivent l'être dans le fichier de configuration.
 - **+** : ajouter le variant
