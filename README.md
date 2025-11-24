@@ -68,7 +68,7 @@ spack:
       require: "@1.5.7"
 
   concretizer:
-    unify: when_possible
+    unify: true
 ```
 
 - **specs** : packages à installer avec les [variants](#Les-variants).
@@ -77,7 +77,7 @@ spack:
   - require : force une version ou impose un [compilateur](#Les-compilateurs)
   - variants : `+` impose un variant
   - providers : force un fournisseur (ex : `mpi: [openmpi]`)
-  - version : indique des version de préférences **sans forcer** (ex : [1.23.1, 1.24.2])
+  - version : indique des versions de préférences **sans forcer** (ex : [1.23.1, 1.24.2])
 - **concretize** : `true/false/when_possible`, impose ou non l'usage d'une unique version de package. Par exemple si `gcc` a besoin d'une version de `zstd` et `tau` a besoin d'une autre, alors il y aura conflit, donc on peut soit mettre `false`, pour tout permettre ou `when_possible` pour maximiser l'usage d'une version d'un package.
 
 #### Les variants
@@ -120,20 +120,36 @@ spack compiler list
 ```
 
 ## Installation
+
+### Résolution de dépendances
 Il est utile de vérifier la résolution des dépendances avant une installation, bien que la commande d'installation puisse le faire par défaut. <br>
 Le `-f` est là pour forcer dans le cas où le fichier `spack.lock` existe car crée au premier `concretize`.
 ```
 spack concretize -f
 ```
 
+### Vérifications
 Voir tout ce qui va être installé après `concretize`.
 - `-d` : voir les dépendances.
 - `-v` : voir les variants.
 - `-c` : voir les packages concretized à installer.
+- `-l` : 
 ```
 spack find
 ```
+On peut voir les packages demandés :
+- [+] = package installé
+- [^] = package non installé ou juste référencé
+- ~ = variante désactivée (exemple : ~mpi = sans MPI)
+- \+ = variante activée (exemple : +papi = avec PAPI)
 
+L'affichage se fait sous forme de sections indiquant l'architecture et le(s) compilateur(s) utilisé(s), parfois aucun n'est nécessaire `no arch / no comilers`.
+```
+# -- architecture / compilateur(s) ----------------
+-- linux-rhel9-zen4 / %c,cxx,fortran=gcc@14.2.0 -----------------
+```
+
+### Plan d'installation
 Voir le plan d'installation (on peut ne rien mettre et ça va faire le spec du fichier `spack.yaml`).
 - Montre exactement ce qui sera installé
 - Toutes les dépendances et leurs versions
@@ -142,11 +158,13 @@ Voir le plan d'installation (on peut ne rien mettre et ça va faire le spec du f
 spack spec <package> <variants>
 ```
 
+### Simulation
 Simulation d'une installation.
 ```
 spack install --fake
 ```
 
+### Installation
 Pour faire l'installation de tous les packages.
 ```
 spack install
