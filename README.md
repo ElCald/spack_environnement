@@ -134,10 +134,10 @@ spack concretize -f
 
 ### Vérifications
 Voir tout ce qui va être installé après `concretize`.
-- `-d` : voir les dépendances.
-- `-v` : voir les variants.
-- `-c` : voir les packages concretized à installer.
-- `-l` : 
+- `-d` : Affiche la liste complète des dépendances, installées ou non, et leur structure
+- `-v` : Affiche les variants activés et compilateurs (affichage verbose).
+- `-c` : Affiche tous les paquets explicitement installés + leur dépendances, sous forme arborescente.
+- `-l` : Affiche les hashes complets (identifiants uniques des spécs) au lieu des hashes courts.
 ```
 spack find
 ```
