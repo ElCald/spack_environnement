@@ -199,7 +199,7 @@ spack uninstall --all
 ```
 
 ## Utilisation de l'environnement
-Il suffit d'activer l'environnment comme vu au début et de `spack load <package>` pour les packages nécéssaires. De même ces commandes doivent être faite dans le fichier de soumission. <br>
+Il suffit d'activer l'environnement comme vu au début et de `spack load <package>` pour les packages nécéssaires. De même ces commandes doivent être faite dans le fichier de soumission. <br>
 Exemple de chemin absolu pour activer depuis n'importe quel répertoire.
 ```
 spack env activate $HOME/.spack-env/env_profiler
