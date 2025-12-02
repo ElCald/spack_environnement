@@ -51,11 +51,14 @@ void parse_papi_events(int *events, int *num_events) {
 
 Dans le main.
 ```
-int events[MAX_EVENTS];
+int main(){
+    // ---------- CODE ----------
+
+    int events[MAX_EVENTS];
     int num_events = 0;
     long long values[MAX_EVENTS];
     int EventSet = PAPI_NULL;
-
+    
     // Initialiser PAPI
     PAPI_library_init(PAPI_VER_CURRENT);
     
@@ -69,20 +72,23 @@ int events[MAX_EVENTS];
     for (int i = 0; i < num_events; i++) {
         PAPI_add_event(EventSet, events[i]);
     }
-
+    
     PAPI_start(EventSet);
-
+    
     // ------------ PROGRAMME ------------ //
-    //                                     //
+    //             À PROFILER              //
     // ----------------------------------- //
-
+    
     PAPI_stop(EventSet, values);
-
+    
     printf("With papi\n");
     for(int i=0; i<NB_VALUES; i++)
         printf("%d : %lld\n", i+1, values[i]);
-
+    
     printf("%d,%d,%d,%lf\n", nx, ny, niters, toc-tic);
+
+    // ---------- RESTE DU CODE ----------
+}
 ```
 
 ## Tau
