@@ -45,7 +45,7 @@ Ajout de chaque package, ce qui remplira le `specs`.
 spack add gcc
 spack add papi
 spack add tau +papi +binutils +pdt +mpi ~openmp
-spack add extrae +papi
+spack add extrae +papi +single-mpi-lib +dyninst
 spack add valgrind
 spack add likwid
 ```
