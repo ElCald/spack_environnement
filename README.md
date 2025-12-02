@@ -65,17 +65,18 @@ Dans le répertoire `env_profiler`, si le fichier `spack.yaml` n'existe pas, le 
 
 ```
 spack:
-  specs:
-  - gcc
-  - papi
-  - tau +papi +binutils +pdt +mpi +openmp
-  - extrae +papi
-  - valgrind 
-  - likwid
+  specs: 
+    - gcc
+    - papi
+    - tau +papi +binutils +pdt ~openmp +mpi
+    - extrae +papi +single-mpi-lib +dyninst
+    - valgrind
+    - likwid
+  
 
   packages:
     all:
-      require: "%gcc"
+      require: '%gcc'
 
   concretizer:
     unify: when_possible
