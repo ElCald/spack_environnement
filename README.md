@@ -142,14 +142,15 @@ spack concretize -f
 ```
 
 ### Vérifications
+```
+spack find
+```
 Voir tout ce qui va être installé après `concretize`.
 - `-d` : Affiche la liste complète des dépendances, installées ou non, et leur structure
 - `-v` : Affiche les variants activés et compilateurs (affichage verbose).
 - `-c` : Affiche tous les paquets explicitement installés + leur dépendances, sous forme arborescente.
 - `-l` : Affiche les hashes complets (identifiants uniques des spécs) au lieu des hashes courts.
-```
-spack find
-```
+
 On peut voir les packages demandés :
 - [+] = package installé
 - [-] = package désinstallé
@@ -203,5 +204,11 @@ Il suffit d'activer l'environnement comme vu au début et de `spack load <packag
 Exemple de chemin absolu pour activer depuis n'importe quel répertoire.
 ```
 spack env activate $HOME/.spack-env/env_profiler
+```
+
+### Localisation
+Pour obtenir le chemin absolu vers les répertoires `bin`, `include` ou `lib` d'un package.
+```
+spack location -i <package@version>
 ```
 [En cours...]
