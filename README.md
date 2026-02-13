@@ -218,4 +218,5 @@ spack find -px | grep <user>
 ```
 - `p` : chemin absolu du package
 - `x` : affiche sans les dépendances
+<br>
 [En cours...]
