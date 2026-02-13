@@ -211,4 +211,11 @@ Pour obtenir le chemin absolu vers les répertoires `bin`, `include` ou `lib` d'
 ```
 spack location -i <package@version>
 ```
+
+Trouver tous les packages installé, avec un grep du `/home` on trouve ceux installé par l'utilisateur en local.
+```sh
+spack find -px | grep <user>
+```
+- `p` : chemin absolu du package
+- `x` : affiche sans les dépendances
 [En cours...]
